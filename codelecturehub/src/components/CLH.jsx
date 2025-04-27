@@ -327,12 +327,28 @@ const CLH = () => {
     setLoading(false);
   };
 
+  // const downloadAsPDF = () => {
+  //   const element = document.getElementById("gemini-output");
+  //   if (element) {
+  //     html2pdf().from(element).save("CLH_Response.pdf");
+  //   }
+  // };
+
   const downloadAsPDF = () => {
     const element = document.getElementById("gemini-output");
     if (element) {
-      html2pdf().from(element).save("CLH_Response.pdf");
+      const opt = {
+        margin:       0.5,
+        filename:     'CLH_Response.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+  
+      html2pdf().set(opt).from(element).save();
     }
   };
+  
 
   return (
     <div className="p-6 max-w-xl mx-auto rounded-2xl shadow-2xl space-y-5 bg-gradient-to-br from-white to-blue-50">
