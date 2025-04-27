@@ -286,7 +286,7 @@ const CLH = () => {
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const GEMINI_API_KEY = "AIzaSyBOI4-0Q3RQXlfICAW1MFGvBy2Vwsc9uz4";
+  const GEMINI_API_KEY = "API";
 
   const handleQuerySubmit = async () => {
     if (!query.trim()) {
