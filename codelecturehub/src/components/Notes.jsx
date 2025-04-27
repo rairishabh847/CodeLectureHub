@@ -356,7 +356,7 @@ export default function Notes() {
   const [loading, setLoading] = useState(false);
   const [copiedIndex, setCopiedIndex] = useState(null);
    
-  const GEMINI_API_KEY ="AIzaSyBOI4-0Q3RQXlfICAW1MFGvBy2Vwsc9uz4";
+  const GEMINI_API_KEY ="API";
 
   const fetchGeminiResult = async () => {
     if (!query.trim()) return;
