@@ -3,7 +3,6 @@ import React, { useState, useRef, useEffect } from "react";
 import Lecture from "./Lecture";
 import Editor from "./Editor";
 import Notes from "./Notes";
-
 const SplitView = () => {
   const sections = {
     lecture: <Lecture />,

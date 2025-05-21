@@ -56,28 +56,64 @@ const Signup = () => {
       navigate('/',{replace:true})
   },[])
 
+ 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded shadow-md">
-      <h2 className="text-2xl font-bold mb-4 text-center">Signup</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        {['fullname', 'userName', 'email', 'password', 'confirmPassword'].map((field) => (
-          <div key={field}>
-            <label className="block text-sm font-medium capitalize">{field.replace(/([A-Z])/g, ' $1')}</label>
-            <input
-              type={(field.includes('password') || field.includes('Password')) ? 'password' : 'text'}
-              name={field}
-              value={formData[field]}
-              onChange={handleChange}
-              className="w-full p-2 border rounded"
-            />
-            {errors[field] && <p className="text-red-500 text-sm">{errors[field]}</p>}
-          </div>
-        ))}
-        <button type="submit" className="w-full bg-blue-500 cursor-pointer text-white p-2 rounded">Register</button>
-      </form>
-      <button onClick={() => navigate('/login')} className="w-full text-blue-500 cursor-pointer mt-4">Back to Login</button>
+    <div className="bg-[radial-gradient(circle,_#9ca3af_1px,_transparent_1px)] [background-size:20px_20px] min-h-screen flex items-center justify-center">
+    {/* </div> <div className="bg-[radial-gradient(circle,_#d1d5db_1px,_transparent_1px)] [background-size:20px_20px] min-h-screen flex items-center justify-center"> */}
+      <div className="max-w-md mx-auto p-8 text-center w-1/2 flex flex-col items-center justify-center bg-emerald-50 bg-opacity-80 rounded-lg shadow-md">
+        <h2 className="text-3xl font-bold mb-6">Signup</h2>
+        <form onSubmit={handleSubmit} className="space-y-4 w-full">
+          {['fullname', 'userName', 'email', 'password', 'confirmPassword'].map((field) => (
+            <div key={field}>
+              <label className="block text-sm font-medium capitalize text-left">
+                {field.replace(/([A-Z])/g, ' $1')}
+              </label>
+              <input
+                type={(field.includes('password') || field.includes('Password')) ? 'password' : 'text'}
+                name={field}
+                value={formData[field]}
+                onChange={handleChange}
+                placeholder={field.replace(/([A-Z])/g, ' $1')}
+                className="w-full p-2 border rounded"
+              />
+              {errors[field] && <p className="text-red-500 text-sm">{errors[field]}</p>}
+            </div>
+          ))}
+          <button type="submit" className="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 w-full cursor-pointer">
+            Register
+          </button>
+        </form>
+        <button onClick={() => navigate('/login')} className="text-blue-500 mt-4 hover:underline cursor-pointer">
+          Back to Login
+        </button>
+      </div>
     </div>
-  );
+  );  
 };
+
+//   return (
+    
+//      <div className="max-w-md mx-auto p-6 bg-white rounded shadow-md">
+//       <h2 className="text-2xl font-bold mb-4 text-center">Signup</h2>
+//       <form onSubmit={handleSubmit} className="space-y-4">
+//         {['fullname', 'userName', 'email', 'password', 'confirmPassword'].map((field) => (
+//           <div key={field}>
+//             <label className="block text-sm font-medium capitalize">{field.replace(/([A-Z])/g, ' $1')}</label>
+//             <input
+//               type={(field.includes('password') || field.includes('Password')) ? 'password' : 'text'}
+//               name={field}
+//               value={formData[field]}
+//               onChange={handleChange}
+//               className="w-full p-2 border rounded"
+//             />
+//             {errors[field] && <p className="text-red-500 text-sm">{errors[field]}</p>}
+//           </div>
+//         ))}
+//         <button type="submit" className="w-full bg-blue-500 cursor-pointer text-white p-2 rounded">Register</button>
+//       </form>
+//       <button onClick={() => navigate('/login')} className="w-full text-blue-500 cursor-pointer mt-4">Back to Login</button>
+//     </div>
+//   );
+// };
 
 export default Signup;

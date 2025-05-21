@@ -20,7 +20,8 @@ export default function Lecture() {
 
 
   return (
-    <div className="bg-gray-100 min-h-screen p-6 text-gray-900">
+    // <div className="bg-gray-100 min-h-screen p-6 text-gray-900">
+      <div className="bg-[radial-gradient(circle,_#9ca3af_1px,_transparent_1px)] [background-size:20px_20px] min-h-screen p-6 text-gray-900">
       <header className="bg-purple-900 text-white p-4 text-center text-xl font-bold rounded-md">
         Video Queue Player
       </header>

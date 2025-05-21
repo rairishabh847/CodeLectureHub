@@ -64,9 +64,9 @@ const Editor = () => {
         onChange={(e) => setLanguage(e.target.value)}
         style={{ marginBottom: "10px",background: "#61dafb" ,color:"black", padding: "5px",borderRadius: "8px" , fontSize: "16px" }}
       >
-        <option value="javascript">JavaScript</option>
-        <option value="java">Java</option>
         <option value="c">C</option>
+        <option value="java">Java</option>
+         <option value="javascript">JavaScript</option>
       </select>
 
 

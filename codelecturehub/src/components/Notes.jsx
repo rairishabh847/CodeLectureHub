@@ -356,7 +356,7 @@ export default function Notes() {
   const [loading, setLoading] = useState(false);
   const [copiedIndex, setCopiedIndex] = useState(null);
    
-  const GEMINI_API_KEY ="AIzaSyBOI4-0Q3RQXlfICAW1MFGvBy2Vwsc9uz4";
+  const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
   const fetchGeminiResult = async () => {
     if (!query.trim()) return;
@@ -505,10 +505,13 @@ export default function Notes() {
     question: "32. Search word in file and count",
     code: `#include <stdio.h>\n#include <string.h>\nint main() {\n    FILE *f = fopen("text.txt", "r");\n    char word[100], temp[100];\n    int count = 0;\n    printf("Enter word to search: ");\n    scanf("%s", word);\n    if (!f) {\n        printf("File could not be opened.\\n");\n        return 1;\n    }\n    while (fscanf(f, "%s", temp) != EOF)\n        if (strcmp(temp, word) == 0)\n            count++;\n    if (count > 0)\n        printf("Word '%s' found %d times.\\n", word, count);\n    else\n        printf("Word not found.\\n");\n    fclose(f);\n    return 0;\n}}`,
   },
+
 ];
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
+    <div className="bg-[radial-gradient(circle,_#9ca3af_1px,_transparent_1px)] [background-size:20px_20px] min-h-screen flex items-center justify-center">
+   
+   <div className=" max-w-3xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6 text-center">C Programming Notes</h1>
 
       <input
@@ -572,6 +575,7 @@ export default function Notes() {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 }
